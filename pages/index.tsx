@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import Header from "../src/components/Header";
-import MenuButtons from "../src/containers/MenuButtons";
+import Menu from "../src/containers/Menu";
 import Logo from "../src/components/Logo";
 import Footer from "../src/components/Footer";
 import AdditionalInformation from "../src/components/Information";
@@ -10,7 +10,7 @@ const Home: NextPage = () => {
   return (
     <div className="m-0 text-center text-medium-brown font-body">
       <Header />
-      <MenuButtons />
+      <Menu />
       <Logo />
       <AdditionalInformation />
       <Footer />

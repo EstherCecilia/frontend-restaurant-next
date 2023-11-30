@@ -103,9 +103,14 @@
   line-height: 1.5;
 }
 
-.logo {
+.menu span {
   height: 1em;
   margin-left: 0.5rem;
+}
+.back {
+  padding: 22px;
+  display: flex;
+  cursor: pointer;
 }
 
 @media (max-width: 600px) {

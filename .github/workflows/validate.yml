@@ -1,0 +1,40 @@
+name: Validate
+
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18.x
+
+      - name: Run tests
+        env:
+          NO_PROXY: ${{ secrets.OLX_NEXUS_NO_PROXY }}
+          HTTP_PROXY: ${{ secrets.OLX_NEXUS_PROXY }}
+        run: yarn && yarn test
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18.x
+
+      - uses: actions/cache@v3
+        id: node-modules
+        with:
+          path: "**/node_modules"
+          key: node_modules-${{ hashFiles('./yarn.lock') }}
+
+      - name: Run Lint
+        env:
+          NO_PROXY: ${{ secrets.OLX_NEXUS_NO_PROXY }}
+          HTTP_PROXY: ${{ secrets.OLX_NEXUS_PROXY }}
+        run: yarn && yarn lint

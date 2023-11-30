@@ -1,0 +1,19 @@
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: /
+    schedule:
+      interval: "daily"
+      timezone: "America/Sao_Paulo"
+      time: "05:00"
+  - package-ecosystem: "npm"
+    directory: /
+    schedule:
+      interval: "daily"
+      timezone: "America/Sao_Paulo"
+      time: "05:00"
+    groups:
+      eslint:
+        dependency-type: "development"
+        patterns:
+          - "eslint*"

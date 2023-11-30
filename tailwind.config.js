@@ -8,8 +8,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'medium-brown': '#653A1E',
-        'button-orange': '#FA873E',
+        'medium-brown': '#3a8191',
+        'button-orange': '#3a8191',
       },
       fontSize: {
         'heading-xl': '46px',
@@ -29,11 +29,8 @@ module.exports = {
         "banner-height": "40vh",
         "banner-height-mobile": "10vh",
       },
-      backgroundImage: {
-        'fish-overlay': "url('/blackgyalbites-nextjs/fish-overlay.png')",
-      },
       backgroundColor: {
-        'caribbean-yellow': '#FFDE59'
+        'caribbean-blue': '#8AD7F6'
       },
       borderRadius: {
         'button-border-radius': '10px'
